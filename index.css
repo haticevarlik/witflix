@@ -1,125 +1,246 @@
+/* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: white;
+    color: #333;
 }
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    color: black;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
 }
 
 .logo {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
-    font-size: 50px;
-
+    font-size: 24px;
     color: #FF0000;
 }
 
 nav ul {
-    list-style-type: none;
     display: flex;
-    gap: 20px;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: black;
     text-decoration: none;
+    color: #333;
 }
 
-.search-bar input {
-    padding: 5px;
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
     border-radius: 3px;
-    border: none;
 }
 
 .main {
-    background-color: #fff;
-    padding: 20px;
-    margin: 20px;
-    border: black solid;
+    padding: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
 }
 
 .main h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.main .play-button {
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 150px;
+    margin: 10px 0;
+}
+
+.checked {
+    color: red;
+  }
+
+.rating {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.rating .maturity-rating{
+    border: black solid 1px;
 }
 
 .movie-info {
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
     margin-bottom: 10px;
 }
 
-.movie-info span {
-    margin-right: 10px;
+.description {
     font-size: 14px;
-    color: #888;
-}
-
-.main p {
-    margin-bottom: 20px;
+    margin: 15px 0;
     line-height: 1.5;
 }
 
-.details p {
-    margin: 5px 0;
+.details ul {
+    list-style: none;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.details li {
+    margin-bottom: 5px;
+}
+
+.details li strong {
+    color: red;
 }
 
 .play-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ff3333;
+    background-color: #f00;
     color: #fff;
-    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
     border-radius: 5px;
+    font-size: 16px;
+}
+
+.play-button:hover {
+    background-color: #c00;
 }
 
 .popular-movies, .recommended {
-    padding: 20px;
-    margin: 20px;
-    background-color: #fff;
+    padding: 30px;
+}
+
+.popular-movies{
+    background-color: #f5f5f5;
+}
+
+.popular-movies header,.recommended header {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
 .popular-movies h2, .recommended h2 {
-    margin-bottom: 15px;
-    font-size: 22px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.popular-movies p, .recommended p {
+    font-size: 14px;
+    color: #555;
+    text-align: right;
+    font-weight: bold;
 }
 
 .movie-container {
     display: flex;
-    gap: 15px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .movie-card {
-    background-color: #f5f5f5;
-    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 30px 15px;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     text-align: center;
-    border-radius: 5px;
+    justify-content: flex-start;
 }
 
-.movie-card img {
-    width: 100%;
-    height: auto;
+.movie-card h3 {
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
-.footer-links, .social, .apps {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 10px;
+.movie-card .maturity-rating, .movie-card .duration {
+    font-size: 14px;
+    margin: 5px;
+    font-weight: lighter;
+}
+.movie-card .maturity-rating{
+    border: black solid 1px;
+}
+
+.movie-card .play-button {
+    margin-top: 10px;
 }
 
 footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    padding-left: 50px;
+    background-color: #f5f5f5;
+    font-size: 14px;
+    color: #777;
+    border-top: 1px solid #ddd;
+}
 
-    padding: 20px 0;
-    text-align: center;
+.footer-links nav {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-links nav a {
+    color: #777;
+    text-decoration: none;
+}
+
+.footer-links p {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999;
+    max-width: 250px;
+}
+
+.social, .apps {
+    text-align: left;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.social p, .apps p {
+    font-weight: bold;
+}
+
+.social img, .apps img {
+    display: inline-block;
+    margin: 5px 0;
+    width: 50px;
+    height: 50px;
 }
